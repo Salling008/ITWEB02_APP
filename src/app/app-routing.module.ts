@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginPageComponent } from './pages/login/login.page'; 
+import { LoginComponent } from './components/login/login.component'
+import { RegisterComponent } from './components/register/register.component'
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+    {
+    path: '',
+    component: HomeComponent,
+  },
   {
     path: 'login',
-    component: LoginPageComponent,
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
     path: '**',
@@ -18,5 +28,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
