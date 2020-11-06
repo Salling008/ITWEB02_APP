@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from '../app/login/login.component'; 
+import { LoginPageComponent } from './pages/login/login.page'; 
 
 const routes: Routes = [
-  
+  {
+    path: 'login',
+    component: LoginPageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
