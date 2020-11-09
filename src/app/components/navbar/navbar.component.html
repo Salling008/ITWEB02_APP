@@ -3,10 +3,10 @@
     <a id="logo" routerLink="">Workout Buddy</a>
   </div>
   <span class="nav-tool-items">
-    <a mat-button routerLink="workouts" routerLinkActive="active">Workouts</a>
     <a *ngIf="!auth.currentUserValue" mat-button routerLink="login" routerLinkActive="active">Log in</a>
     <a *ngIf="!auth.currentUserValue" mat-button color="primary" mat-raised-button routerLink="register"
       routerLinkActive="active">Register</a>
+    <a mat-button routerLink="workout" routerLinkActive="active">Workouts</a>
     <button *ngIf="auth.currentUserValue" mat-button color="primary" (click)="logout()">
       Logout
     </button>

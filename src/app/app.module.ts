@@ -12,6 +12,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
+import { WorkoutComponent } from './components/workout/workout.component';
+import { WorkoutListComponent } from './components/workout-list/workout-list.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { RegisterComponent } from './components/register/register.component';
     LoginComponent,
     NavbarComponent,
     RegisterComponent,
+    WorkoutComponent,
+    WorkoutListComponent,
   ],
   imports: [
     BrowserModule,
