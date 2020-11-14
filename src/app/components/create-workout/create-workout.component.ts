@@ -1,13 +1,8 @@
-import { Router } from '@angular/router';
-import { AuthenticationService } from '../../services/authentication.service';
-import { ExerciseService } from '../../services/exercise.service';
-import { Workout } from '../../models/workout';
 import { WorkoutService } from '../../services/workout.service';
 import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 import { Exercise } from '../../models/exercise';
 import { Component, OnInit, Input } from '@angular/core';
 import { first } from 'rxjs/operators';
-import { Observable, forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-create-workout',
@@ -37,11 +32,7 @@ export class CreateWorkoutComponent implements OnInit {
   currentExercise: Exercise;
 
   constructor(
-    private formBuilder: FormBuilder,
     private workoutService: WorkoutService,
-    private exerciseService: ExerciseService,
-    private auth: AuthenticationService,
-    private router: Router,
   ) {}
 
   ngOnInit() {

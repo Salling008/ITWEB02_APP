@@ -15,11 +15,17 @@ export class WorkoutService {
   }
 
     getById(workoutId: string) {
-    return this.httpClient.get<Workout>(
-      'http://localhost:3000/workout?=${workoutId}',
-    );
+      return this.httpClient.get<Workout>(
+        'http://localhost:3000/workout?=${workoutId}',
+      );
     }
-    
+  
+  deleteWorkout(workoutId: string) {
+    return this.httpClient.delete<any>(
+      'http://localhost:3000/deleteWorkout?id='+ workoutId,
+    );
+  }
+
   create(
     title: String,
     description: String,
