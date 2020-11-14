@@ -24,13 +24,11 @@ export class CreateWorkoutComponent implements OnInit {
   @Input()
   exercise: string;
   @Input()
+  exerciseDescription: string;
+  @Input()
   set: number;
   @Input()
   reps: string;
-  @Input()
-  workoutId = '';
-  @Input()
-  exercises: Exercise[] = [];
 
   createExerciseForm: FormGroup;
   currentExerciseForm: FormGroup;
@@ -65,14 +63,8 @@ export class CreateWorkoutComponent implements OnInit {
     });
   }
 
-  setCurrentExercise(exerciseData: Exercise) {
-    this.currentExercise = exerciseData;
-    this.currentExerciseForm = this.formBuilder.group({
-      type: [exerciseData.exercise, Validators.required],
-      description: [exerciseData.description, Validators.required],
-      set: [exerciseData.set, [Validators.required]],
-      reps: [exerciseData.reps, [Validators.required]]
-    });
+  createWorkout() {
+    this.workoutService.create(this.title, this.description, this.exercise, this.exerciseDescription, this.set, this.reps).pipe(first()).subscribe();
   }
 
   setStep(index: number) {
@@ -85,10 +77,5 @@ export class CreateWorkoutComponent implements OnInit {
 
   prevStep() {
     this.step--;
-  }
-
-  createWorkout() {
-    return null;
-    
   }
 }
