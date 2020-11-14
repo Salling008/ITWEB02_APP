@@ -12,13 +12,26 @@
     <app-exercise [exercise]="exercise"> </app-exercise>
   </div>
   <mat-action-row>
-    <button mat-stroked-button color="primary" (click)="addToCompletedList()">
+    <button
+      *ngIf="auth.currentUserValue"
+      mat-stroked-button
+      color="primary"
+      (click)="addToCompletedList()"
+    >
       Add this exercise to your completed list
     </button>
-    <a mat-button [routerLink]="['/workout/', workout._id]"
+    <a
+      *ngIf="auth.currentUserValue"
+      mat-button
+      [routerLink]="['/workout/', workout._id]"
       >Add an exercise to workout</a
     >
-    <button mat-stroked-button color="primary" (click)="deleteWorkout()">
+    <button
+      *ngIf="auth.currentUserValue"
+      mat-stroked-button
+      color="primary"
+      (click)="deleteWorkout()"
+    >
       Delete workout
     </button>
   </mat-action-row>

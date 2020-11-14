@@ -5,12 +5,12 @@ import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
-  selector: 'app-workout',
-  templateUrl: './workout.component.html',
-  styleUrls: ['./workout.component.scss']
+  selector: 'app-workout-completed',
+  templateUrl: './workout-completed.component.html',
+  styleUrls: ['./workout-completed.component.scss']
 })
   
-export class WorkoutComponent implements OnInit {
+export class WorkoutCompleteComponent implements OnInit {
   @Input()
   workout: Workout;
     

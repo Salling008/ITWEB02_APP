@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
+import { Workout } from '../../models/workout'
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { WorkoutService } from 'src/app/services/workout.service';
-import { Workout } from '../../models/workout'
+import { first } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-workout-list',
-  templateUrl: './workout-list.component.html',
-  styleUrls: ['./workout-list.component.scss']
+  selector: 'app-log',
+  templateUrl: './log.component.html',
+  styleUrls: ['./log.component.scss']
 })
-export class WorkoutListComponent implements OnInit {
+export class LogComponent implements OnInit {
 
   loading = false;
-
   workouts: Workout[] = [];
 
+  constructor(public auth: AuthenticationService, private workoutService: WorkoutService,) { }
 
-  constructor(public auth: AuthenticationService, private workoutService: WorkoutService) { }
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.loading = true;
     this.workoutService
-      .getAllWorkouts()
+      .getAllCompletedWorkouts()
       .pipe(first())
       .subscribe(
         data => {
@@ -31,4 +29,5 @@ export class WorkoutListComponent implements OnInit {
         }
     );
   }
+
 }

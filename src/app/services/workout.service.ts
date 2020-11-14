@@ -15,11 +15,15 @@ export class WorkoutService {
     return this.httpClient.get<Workout[]>('http://localhost:3000/workout');
   }
 
-    getById(workoutId: string) {
-      return this.httpClient.get<Workout>(
-        'http://localhost:3000/workout?=${workoutId}',
-      );
-    }
+  getAllCompletedWorkouts() {
+    return this.httpClient.get<Workout[]>('http://localhost:3000/completedworkouts?id=' + this.auth.currentUserValue.id); 
+  }
+
+  getById(workoutId: string) {
+    return this.httpClient.get<Workout>(
+      'http://localhost:3000/workout?=${workoutId}',
+    );
+  }
   
   deleteWorkout(workoutId: string) {
     return this.httpClient.delete<any>(

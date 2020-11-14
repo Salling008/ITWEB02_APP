@@ -1,6 +1,8 @@
 <mat-toolbar color="background">
   <div>
-    <a id="logo" routerLink="">Workout Buddy</a>
+    <a id="logo" mat-button mat-raised-button color="primary" routerLink=""
+      >Workout Buddy</a
+    >
   </div>
   <span class="nav-tool-items">
     <a
@@ -26,6 +28,7 @@
     >
 
     <a
+      *ngIf="auth.currentUserValue"
       mat-button
       routerLink="create"
       routerLinkActive="active"
@@ -33,10 +36,17 @@
       color="primary"
       >Create a workout</a
     >
-
+    <a
+      *ngIf="auth.currentUserValue"
+      mat-button
+      routerLink="log"
+      routerLinkActive="active"
+      >Log of completed workouts</a
+    >
     <button
       *ngIf="auth.currentUserValue"
       mat-button
+      mat-raised-button
       color="primary"
       (click)="logout()"
     >

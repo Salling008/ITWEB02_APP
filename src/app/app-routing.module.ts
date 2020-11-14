@@ -7,6 +7,7 @@ import { WorkoutComponent } from './components/workout/workout.component';
 import { WorkoutListComponent } from './components/workout-list/workout-list.component';
 import { CreateWorkoutComponent } from './components/create-workout/create-workout.component';
 import { AddExerciseComponent } from './components/add-exercise/add-exercise.component';
+import { LogComponent } from './components/log/log.component';
 
 const routes: Routes = [
     {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateWorkoutComponent,
+  },
+  {
+    path: 'log',
+    component: LogComponent,
   },
   {
     path: '**',
