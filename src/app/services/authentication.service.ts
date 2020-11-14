@@ -26,6 +26,11 @@ private readonly currentUserString = 'currentUser';
   public get currentUserValue() {
     return this.currentUserSubject.value;
   }
+  register(email: string, password: string) {
+    return this.http
+      .post<any>('http://localhost:3000/register', { 'email': email, 'password': password})
+      
+  } 
 
   login(email: string, password: string) {
     return this.http
