@@ -9,6 +9,14 @@ export class ExerciseService {
 
   constructor(private httpClient: HttpClient) { }
 
+addToWorkout(workoutId: string, exercise: Exercise) {
+    return this.httpClient.post<Exercise>(
+      `http://localhost:3000/addExercise?id=` + workoutId, {'exercise': exercise },
+    );
+  }
+
+
+
     getByWorkout(workoutId: string) {
     return this.httpClient.get<Exercise[]>(
       'http://localhost:3000/workout?id='+ workoutId,

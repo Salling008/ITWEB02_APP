@@ -1,0 +1,70 @@
+<mat-accordion class="accordion">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Create workout </mat-panel-title>
+      <mat-panel-description> Create your own workout </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field class="full-width">
+      <input
+        type="text"
+        matInput
+        placeholder="Title"
+        class="full-width"
+        [(ngModel)]="title"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        type="text"
+        matInput
+        placeholder="Description"
+        class="full-width"
+        [(ngModel)]="description"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        type="text"
+        matInput
+        placeholder="Your first exercise"
+        class="full-width"
+        [(ngModel)]="exercise"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        type="text"
+        matInput
+        placeholder="Your first exercise description"
+        class="full-width"
+        [(ngModel)]="description"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        type="number"
+        matInput
+        placeholder="Number of sets"
+        class="full-width"
+        [(ngModel)]="set"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        type="number"
+        matInput
+        placeholder="Number of reps or time"
+        class="full-width"
+        [(ngModel)]="reps"
+      />
+    </mat-form-field>
+    <button mat-stroked-button color="primary" (click)="createWorkout()">
+      Add workout
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>

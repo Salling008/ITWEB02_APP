@@ -1,0 +1,55 @@
+<mat-accordion class="accordion">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Add exercise to workout </mat-panel-title>
+      <mat-panel-description>
+        Add an exercise to the excisting workout
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field class="full-width">
+      <input
+        type="text"
+        matInput
+        placeholder="Exercise name"
+        class="full-width"
+        [(ngModel)]="exercise.exercise"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        type="text"
+        matInput
+        placeholder="Description"
+        class="full-width"
+        [(ngModel)]="exercise.description"
+      />
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input
+        type="number"
+        matInput
+        placeholder="Number of sets"
+        class="full-width"
+        [(ngModel)]="exercise.set"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input
+        type="number"
+        matInput
+        placeholder="Number of reps or time"
+        class="full-width"
+        [(ngModel)]="exercise.reps"
+      />
+    </mat-form-field>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="addExerciseToWorkout(exercise)"
+    >
+      Add exercise
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>

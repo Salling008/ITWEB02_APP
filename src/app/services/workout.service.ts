@@ -12,4 +12,10 @@ export class WorkoutService {
   getAllWorkouts() {
     return this.httpClient.get<Workout[]>('http://localhost:3000/workout');
   }
+
+    getById(workoutId: string) {
+    return this.httpClient.get<Workout>(
+      `http://localhost:3000/workout?=${workoutId}`,
+    );
+  }
 }

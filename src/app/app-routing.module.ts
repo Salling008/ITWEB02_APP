@@ -5,6 +5,8 @@ import { RegisterComponent } from './components/register/register.component'
 import { HomeComponent } from './components/home/home.component';
 import { WorkoutComponent } from './components/workout/workout.component';
 import { WorkoutListComponent } from './components/workout-list/workout-list.component';
+import { CreateWorkoutComponent } from './components/create-workout/create-workout.component';
+import { AddExerciseComponent } from './components/add-exercise/add-exercise.component';
 
 const routes: Routes = [
     {
@@ -19,9 +21,22 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },
-    {
-    path: 'workout',
+  {
+    path: 'workoutlist',
     component: WorkoutListComponent,
+  },
+  {
+    path: 'workout',
+    children: [
+      {
+        path: ':workoutId',
+        component: AddExerciseComponent
+      }
+    ]
+  },
+  {
+    path: 'create',
+    component: CreateWorkoutComponent,
   },
   {
     path: '**',

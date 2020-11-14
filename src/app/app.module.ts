@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { WorkoutComponent } from './components/workout/workout.component';
 import { WorkoutListComponent } from './components/workout-list/workout-list.component';
+import { ExerciseComponent } from './components/exercise/exercise.component';
+import { CreateWorkoutComponent } from './components/create-workout/create-workout.component';
+import { AddExerciseComponent } from './components/add-exercise/add-exercise.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { WorkoutListComponent } from './components/workout-list/workout-list.com
     RegisterComponent,
     WorkoutComponent,
     WorkoutListComponent,
+    ExerciseComponent,
+    CreateWorkoutComponent,
+    AddExerciseComponent,
   ],
   imports: [
     BrowserModule,

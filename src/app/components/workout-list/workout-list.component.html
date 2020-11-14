@@ -1,29 +1,28 @@
 <div>
-    <div *ngIf="!loading">
-        <div *ngIf="workouts.length === 0">
-            <mat-card class="no-workouts">
-                <mat-card-header>
-                    <mat-card-title class="title">
-                        You currently don't have any workouts.
-                    </mat-card-title>
-                    <mat-card-subtitle>
-                        To add some, login and create one or search for other people's
-                        workouts
-                    </mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-actions>
-                    <a mat-button routerLink="/workout/create">Create Workout</a>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-        <mat-accordion>
-            <div *ngFor="let workout of workouts; index as i">
-                <app-workout [workout]="workout" [(step)]="step" [i]="i" (subscribe)="stepChanged($event)">
-                </app-workout>
-            </div>
-        </mat-accordion>
+  <div *ngIf="!loading">
+    <div *ngIf="workouts.length === 0">
+      <mat-card class="no-workouts">
+        <mat-card-header>
+          <mat-card-title class="title">
+            There is currently no workouts.
+          </mat-card-title>
+          <mat-card-subtitle>
+            To add some, login and create one or search for other people's
+            workouts
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <a mat-button routerLink="/create">Create Workout</a>
+        </mat-card-actions>
+      </mat-card>
     </div>
-    <div *ngIf="loading" class="spinner">
-        <mat-spinner></mat-spinner>
-    </div>
+    <mat-accordion>
+      <div *ngFor="let workout of workouts; index as i">
+        <app-workout [workout]="workout"> </app-workout>
+      </div>
+    </mat-accordion>
+  </div>
+  <div *ngIf="loading" class="spinner">
+    <mat-spinner></mat-spinner>
+  </div>
 </div>

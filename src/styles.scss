@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./theme.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+@include angular-material-theme($workout-app-theme);
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  color: #fff;
+  background-color: #232323;
+  font-family: mat-font-family($workout-app-typography);
+  line-height: mat-line-height($workout-app-typography, body-1);
+  font-size: mat-font-size($workout-app-typography, body-1);
+  height: 100%;
+  margin: 0;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -33,21 +33,8 @@ export class WorkoutListComponent implements OnInit {
       .subscribe(
         data => {
           this.workouts = data;
-          if (this.workouts.length == 0) {
             this.loading = false;
             return;
-          }
-          this.workouts.forEach((workout, index) => {
-            this.exerciseService
-              .getByWorkout(workout._id)
-              .pipe(first())
-              .subscribe(
-                data => {
-                  this.workouts[index].exercises = data;
-                  this.loading = false;
-                }
-              );
-          });
         }
     );
   }
