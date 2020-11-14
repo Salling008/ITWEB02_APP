@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Exercise } from 'src/app/models/exercise';
 import { ExerciseService } from 'src/app/services/exercise.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-add-exercise',
   templateUrl: './add-exercise.component.html',
@@ -10,13 +11,28 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AddExerciseComponent implements OnInit {
   constructor(private exerciseService: ExerciseService, private activatedRoute: ActivatedRoute) { }
   @Input()
-  exercise: Exercise;
+  exercise: String;
+  @Input()
+  exerciseDescription: String;
+  @Input()
+  set: Number;
+  @Input()
+  reps: String;
+
 
   ngOnInit(): void {
   }
 
-  addExerciseToWorkout(exercise: Exercise) {
+  addExerciseToWorkout() {
     const workoutId: string = this.activatedRoute.snapshot.params.workoutId;
-    this.exerciseService.addToWorkout(workoutId, exercise)
+    
+    var exerciseToCreate: Exercise = {
+      exercise: this.exercise,
+      description: this.exerciseDescription,
+      set: this.set,
+      reps: this.reps
+    }
+
+    this.exerciseService.addToWorkout(workoutId, exerciseToCreate).pipe(first()).subscribe();
   }
 }

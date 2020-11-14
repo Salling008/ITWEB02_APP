@@ -11,7 +11,7 @@ export class ExerciseService {
 
 addToWorkout(workoutId: string, exercise: Exercise) {
     return this.httpClient.post<Exercise>(
-      `http://localhost:3000/addExercise?id=` + workoutId, {'exercise': exercise },
+      `http://localhost:3000/addExercise?id=` + workoutId, {'exercise': exercise.exercise, 'exerciseDescription': exercise.description, 'set': exercise.set, 'reps': exercise.reps },
     );
   }
 

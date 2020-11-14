@@ -12,7 +12,7 @@
         matInput
         placeholder="Exercise name"
         class="full-width"
-        [(ngModel)]="exercise.exercise"
+        [(ngModel)]="exercise"
       />
     </mat-form-field>
 
@@ -22,7 +22,7 @@
         matInput
         placeholder="Description"
         class="full-width"
-        [(ngModel)]="exercise.description"
+        [(ngModel)]="exerciseDescription"
       />
     </mat-form-field>
     <mat-form-field class="full-width">
@@ -31,7 +31,7 @@
         matInput
         placeholder="Number of sets"
         class="full-width"
-        [(ngModel)]="exercise.set"
+        [(ngModel)]="set"
       />
     </mat-form-field>
 
@@ -41,14 +41,10 @@
         matInput
         placeholder="Number of reps or time"
         class="full-width"
-        [(ngModel)]="exercise.reps"
+        [(ngModel)]="reps"
       />
     </mat-form-field>
-    <button
-      mat-stroked-button
-      color="primary"
-      (click)="addExerciseToWorkout(exercise)"
-    >
+    <button mat-stroked-button color="primary" (click)="addExerciseToWorkout()">
       Add exercise
     </button>
   </mat-expansion-panel>

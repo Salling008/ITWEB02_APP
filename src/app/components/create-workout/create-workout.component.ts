@@ -45,22 +45,6 @@ export class CreateWorkoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.initialForm();
-  }
-
-  initialForm() {
-    this.createExerciseForm = this.formBuilder.group({
-      type: ['', Validators.required],
-      description: ['', Validators.required],
-      modeValue: [0, Validators.min(1)],
-    });
-
-    this.currentExerciseForm = this.formBuilder.group({
-      type: ['', Validators.required],
-      description: ['', Validators.required],
-      set: [0, [Validators.required]],
-      reps: ['', Validators.required],
-    });
   }
 
   createWorkout() {
