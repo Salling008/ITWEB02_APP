@@ -12,6 +12,9 @@
     <app-exercise [exercise]="exercise"> </app-exercise>
   </div>
   <mat-action-row>
+    <button mat-stroked-button color="primary" (click)="addToCompletedList()">
+      Add this exercise to your completed list
+    </button>
     <a mat-button [routerLink]="['/workout/', workout._id]"
       >Add an exercise to workout</a
     >

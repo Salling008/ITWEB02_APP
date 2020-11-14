@@ -22,4 +22,8 @@ export class WorkoutComponent implements OnInit {
   deleteWorkout() {
     this.workoutService.deleteWorkout(this.workout._id).pipe(first()).subscribe();
   }
+
+  addToCompletedList() {
+    this.workoutService.addWorkoutToCompletedList(this.workout._id).pipe(first()).subscribe();
+  }
 }

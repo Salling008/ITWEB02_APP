@@ -1,6 +1,4 @@
 export class User {
     id: String;
-    email: String;
-    password: String;
     token?: String;
 }
