@@ -8,7 +8,9 @@
     {{ workout.description }}
   </mat-panel-description>
   <br />
-  <div *ngFor="let exercise of workout.exercises; index as i"></div>
+  <div *ngFor="let exercise of workout.exercise; index as i">
+    <app-exercise [exercise]="exercise"> </app-exercise>
+  </div>
   <mat-action-row>
     <a mat-button [routerLink]="['/workout/', workout._id]"
       >Add an exercise to workout</a
