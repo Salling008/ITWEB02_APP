@@ -1,5 +1,5 @@
 <mat-accordion class="accordion">
-  <mat-expansion-panel hideToggle>
+  <mat-expansion-panel hideToggle expanded>
     <mat-expansion-panel-header>
       <mat-panel-title> Add exercise to workout </mat-panel-title>
       <mat-panel-description>
@@ -44,7 +44,12 @@
         [(ngModel)]="reps"
       />
     </mat-form-field>
-    <button mat-stroked-button color="primary" (click)="addExerciseToWorkout()">
+    <button
+      mat-stroked-button
+      color="primary"
+      routerLink="/workoutlist"
+      (click)="addExerciseToWorkout()"
+    >
       Add exercise
     </button>
   </mat-expansion-panel>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Exercise } from 'src/app/models/exercise';
 import { ExerciseService } from 'src/app/services/exercise.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-add-exercise',

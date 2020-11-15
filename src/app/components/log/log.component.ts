@@ -11,20 +11,17 @@ import { first } from 'rxjs/operators';
 })
 export class LogComponent implements OnInit {
 
-  loading = false;
   workouts: Workout[] = [];
 
   constructor(public auth: AuthenticationService, private workoutService: WorkoutService,) { }
 
   ngOnInit(): void {
-    this.loading = true;
     this.workoutService
       .getAllCompletedWorkouts()
       .pipe(first())
       .subscribe(
         data => {
           this.workouts = data;
-            this.loading = false;
             return;
         }
     );

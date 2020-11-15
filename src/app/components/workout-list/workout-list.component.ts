@@ -11,22 +11,17 @@ import { Workout } from '../../models/workout'
 })
 export class WorkoutListComponent implements OnInit {
 
-  loading = false;
-
   workouts: Workout[] = [];
-
 
   constructor(public auth: AuthenticationService, private workoutService: WorkoutService) { }
 
   ngOnInit() {
-    this.loading = true;
     this.workoutService
       .getAllWorkouts()
       .pipe(first())
       .subscribe(
         data => {
           this.workouts = data;
-            this.loading = false;
             return;
         }
     );

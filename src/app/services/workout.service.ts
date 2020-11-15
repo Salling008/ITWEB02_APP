@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { title } from 'process';
+import { environment } from 'src/environments/environment';
 import { Workout } from '../models/workout';
 import { AuthenticationService } from './authentication.service';
 
@@ -12,28 +13,22 @@ export class WorkoutService {
   constructor(private httpClient: HttpClient, private auth: AuthenticationService ) { }
 
   getAllWorkouts() {
-    return this.httpClient.get<Workout[]>('http://localhost:3000/workout');
+    return this.httpClient.get<Workout[]>(`${environment.URL}/workout`);
   }
 
   getAllCompletedWorkouts() {
-    return this.httpClient.get<Workout[]>('http://localhost:3000/completedworkouts?id=' + this.auth.currentUserValue.id); 
+    return this.httpClient.get<Workout[]>(`${environment.URL}/completedworkouts?id=` + this.auth.currentUserValue.id); 
   }
-
-  getById(workoutId: string) {
-    return this.httpClient.get<Workout>(
-      'http://localhost:3000/workout?=${workoutId}',
-    );
-  }
-  
+ 
   deleteWorkout(workoutId: string) {
     return this.httpClient.delete<any>(
-      'http://localhost:3000/deleteWorkout?id='+ workoutId,
+      `${environment.URL}/deleteWorkout?id=${workoutId}`,
     );
   }
 
   addWorkoutToCompletedList(workoutId: string) {
     return this.httpClient.post<any>(
-      'http://localhost:3000/addToCompleteList', {
+      `${environment.URL}/addToCompleteList`, {
         'userId': this.auth.currentUserValue.id,
         'workoutId': workoutId
       }
@@ -48,7 +43,7 @@ export class WorkoutService {
     set: Number,
     reps: String)
   {
-    return this.httpClient.post<any>('http://localhost:3000/createworkout', {
+    return this.httpClient.post<any>(`${environment.URL}/createworkout`, {
       'title': title,
       'description': description,
       'exercise': exercise,

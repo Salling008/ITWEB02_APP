@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../../services/authentication.service'
-import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +9,6 @@ import { pipe } from 'rxjs';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  loading = false;
   submitted = false;
   returnUrl: string;
 
