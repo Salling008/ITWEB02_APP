@@ -21,9 +21,10 @@ export class WorkoutService {
   }
  
   deleteWorkout(workoutId: string) {
-    return this.httpClient.delete<any>(
-      `${environment.URL}/deleteWorkout?id=${workoutId}`,
-    );
+    return this.httpClient.post<any>(
+      `${environment.URL}/deleteWorkout`, {
+      'workoutId': workoutId
+    });
   }
 
   addWorkoutToCompletedList(workoutId: string) {
