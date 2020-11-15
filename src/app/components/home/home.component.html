@@ -1,70 +1,16 @@
-<<<<<<< HEAD
 <h1>Velkommen til Workout Buddy.</h1>
-<h2>På denne hjemmesiden kan du skabe dine egne workouts med selvvalgte exercises.</h2>
-<mat-toolbar color="background">
-    <div>
-      <a id="logo" mat-button mat-raised-button color="primary" routerLink=""
-        >Workout Buddy</a
-      >
-    </div>
-    <span class="nav-tool-items">
-      <a
-        *ngIf="!auth.currentUserValue"
-        mat-button
-        routerLink="login"
-        routerLinkActive="active"
-        >Log in</a
-      >
-  
-      <a
-        *ngIf="!auth.currentUserValue"
-        mat-button
-        color="primary"
-        mat-raised-button
-        routerLink="register"
-        routerLinkActive="active"
-        >Register</a
-      >
-  
-      <a mat-button routerLink="workoutlist" routerLinkActive="active"
-        >Workouts</a
-      >
-  
-      <a
-        *ngIf="auth.currentUserValue"
-        mat-button
-        routerLink="create"
-        routerLinkActive="active"
-        mat-raised-button
-        color="primary"
-        >Create a workout</a
-      >
-      <a
-        *ngIf="auth.currentUserValue"
-        mat-button
-        routerLink="log"
-        routerLinkActive="active"
-        >Log of completed workouts</a
-      >
-      <button
-        *ngIf="auth.currentUserValue"
-        mat-button
-        mat-raised-button
-        color="primary"
-        (click)="logout()"
-      >
-        Logout
-      </button>
-    </span>
-  </mat-toolbar>
-  <p>Under Workouts kan du se alle de workout brugere kan lavede</p>
-  <p>For at lave din egen Workout, redigere en workout eller log de workouts du har gennemført,
-      skal du have skabt en bruger og være logget ind.
-  </p>
-  <p>
-      Du kan bruge Register siden for at lave din bruger og Login for at logge ind på den.
-  </p>
-  <p>
-      Når du er logget på, kan du lave din Workout ved at bruge Create Wourkout. 
-  </p>
-
+<h2>
+  På denne hjemmesiden kan du skabe dine egne workouts med selvvalgte exercises.
+</h2>
+<p>Under Workouts kan du se alle de workout brugere kan lavede</p>
+<p>
+  For at lave din egen Workout, redigere en workout eller log de workouts du har
+  gennemført, skal du have skabt en bruger og være logget ind.
+</p>
+<p>
+  Du kan bruge Register siden for at lave din bruger og Login for at logge ind
+  på den.
+</p>
+<p>
+  Når du er logget på, kan du lave din Workout ved at bruge Create Wourkout.
+</p>

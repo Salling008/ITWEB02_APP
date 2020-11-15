@@ -1,5 +1,5 @@
 <mat-accordion class="accordion">
-  <mat-expansion-panel hideToggle expanded>
+  <mat-expansion-panel hideToggle expanded class="box">
     <mat-expansion-panel-header>
       <mat-panel-title> Add exercise to workout </mat-panel-title>
       <mat-panel-description>
@@ -45,8 +45,8 @@
       />
     </mat-form-field>
     <button
+      class="submit-button"
       mat-stroked-button
-      color="primary"
       routerLink="/workoutlist"
       (click)="addExerciseToWorkout()"
     >

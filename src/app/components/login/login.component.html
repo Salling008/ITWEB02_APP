@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="box">
   <h2>Login</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="full-width">
@@ -29,10 +29,8 @@
       </div>
     </mat-form-field>
     <div class="form-group">
-      <button mat-stroked-button color="accent" class="btn btn-primary">
-        Login
-      </button>
-      <button mat-stroked-button color="accent" class="btn btn-primary">
+      <button mat-stroked-button class="btn btn-primary">Login</button>
+      <button mat-stroked-button class="btn btn-primary">
         <a routerLink="/register" class="btn-link">Register</a>
       </button>
     </div>

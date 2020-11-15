@@ -1,5 +1,5 @@
-<mat-accordion class="accordion">
-  <mat-expansion-panel hideToggle="true" expanded>
+<mat-accordion>
+  <mat-expansion-panel hideToggle="true" expanded class="box">
     <mat-expansion-panel-header>
       <mat-panel-title> Create workout </mat-panel-title>
       <mat-panel-description> Create your own workout </mat-panel-description>
@@ -63,8 +63,8 @@
       />
     </mat-form-field>
     <button
+      class="submit-buttton"
       mat-stroked-button
-      color="primary"
       routerLink="/workoutlist"
       (click)="createWorkout()"
     >
