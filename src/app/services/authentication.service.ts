@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user'
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 
@@ -28,7 +29,7 @@ private readonly currentUserString = 'currentUser';
   }
 
   register( email: String, password: String, confirmPassword: String) {
-    return this.http.post<any>('http://localhost:3000/register', {
+    return this.http.post<any>( `${environment.URL}/register`, {
       'email': email,
       'password': password,
       'confirmPassword': confirmPassword,
@@ -37,7 +38,7 @@ private readonly currentUserString = 'currentUser';
 
   login(email: string, password: string) {
     return this.http
-      .post<any>(`http://localhost:3000/login`, { 'email': email, 'password': password })
+      .post<any>(`${environment.URL}/login`, { 'email': email, 'password': password })
       .pipe(
         map((user) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
